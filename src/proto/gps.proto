@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package gps;
+
+service gpsService {
+  rpc CreateGps (CreateGpsRequest) returns (CreateGpsResponse) {}
+}
+
+// CreateGps
+
+message CreateGpsRequest {
+  string imei = 1;
+  string simNumber = 2;
+  string longitude = 3;
+  string latitude = 4;
+}
+
+message CreateGpsResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  int32 id = 3;
+}
